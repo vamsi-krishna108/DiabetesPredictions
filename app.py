@@ -15,16 +15,16 @@ Built using Linear Regression algorithm with 77% accuracy.
 
 st.markdown("---")  # Divider line
 
-age = st.number_input("Age",  max_value=100)
-sex = st.number_input("Sex (0/1)",  max_value=1)
-bmi = st.number_input("BMI", max_value=60.0,step=0.1)
-bp  = st.number_input("BP",max_value=150.0, value=80.0, step=0.5)
-s1  = st.number_input("S1", value=0.0)
-s2  = st.number_input("S2", value=0.0)
-s3  = st.number_input("S3", value=0.0)
-s4  = st.number_input("S4", value=0.0)
-s5  = st.number_input("S5", value=0.0)
-s6  = st.number_input("S6", value=0.0)
+age = st.number_input("Age")
+sex = st.number_input("Sex ")
+bmi = st.number_input("BMI")
+bp  = st.number_input("BP")
+s1  = st.number_input("S1")
+s2  = st.number_input("S2")
+s3  = st.number_input("S3")
+s4  = st.number_input("S4")
+s5  = st.number_input("S5")
+s6  = st.number_input("S6")
 
 if st.button("Predict"):
     data = np.array([[age, sex, bmi, bp, s1, s2, s3, s4, s5, s6]])
