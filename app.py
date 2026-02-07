@@ -7,6 +7,13 @@ regmodel = pickle.load(open('regmodel.pkl','rb'))
 scaler = pickle.load(open('scaling.pkl','rb'))
 
 st.title("Diabetes Predictions")
+st.title("🏥 Diabetes Prediction System")
+st.write("""
+This ML model predicts the likelihood of diabetes based on medical parameters.
+Built using Linear Regression algorithm with 77% accuracy.
+""")
+
+st.markdown("---")  # Divider line
 
 age = st.number_input("Age", min_value=1, max_value=100, value=30)
 sex = st.number_input("Sex (0/1)", min_value=0, max_value=1, value=0)
@@ -24,3 +31,7 @@ if st.button("Predict"):
     new_data = scaler.transform(data)
     output = regmodel.predict(new_data)
     st.success(f"Predicted diabetes progression: {output[0].item():.2f}")
+
+st.markdown("---")
+st.write("**Note:** This is a predictive model and should not replace professional medical advice.")
+st.write("Created by: [Jonnagiri Vamsi Krishna JVK] | [LinkedIn : https://www.linkedin.com/in/vamsi-krishna-4210a1325/ ,GitHub : https://github.com/vamsi-krishna108]")
