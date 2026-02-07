@@ -15,10 +15,10 @@ Built using Linear Regression algorithm with 77% accuracy.
 
 st.markdown("---")  # Divider line
 
-age = st.number_input("Age", min_value=1, max_value=100, value=30)
-sex = st.number_input("Sex (0/1)", min_value=0, max_value=1, value=0)
-bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=25.0, step=0.1)
-bp  = st.number_input("BP", min_value=50.0, max_value=150.0, value=80.0, step=0.5)
+age = st.number_input("Age",  max_value=100)
+sex = st.number_input("Sex (0/1)",  max_value=1)
+bmi = st.number_input("BMI", max_value=60.0,step=0.1)
+bp  = st.number_input("BP",max_value=150.0, value=80.0, step=0.5)
 s1  = st.number_input("S1", value=0.0)
 s2  = st.number_input("S2", value=0.0)
 s3  = st.number_input("S3", value=0.0)
