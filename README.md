@@ -51,7 +51,7 @@ streamlit run app.py
 ```
 
 ## 📸 Screenshots
-![App Screenshot](screenshot.png)
+![App Screenshot](Screenshot 2026-02-07 164443.png)
 
 ## 👨‍💻 Author
 [Jonnagiri Vamsi Krishna] - [LinkedIn : https://www.linkedin.com/in/vamsi-krishna-4210a1325/] - [Email : vamshikrishna4444j@gmail.com]
