@@ -1,40 +1,26 @@
 import pickle
-from flask import Flask, request,app,jsonify,render_template
-
 import numpy as np
+import streamlit as st
 
-app=Flask(__name__)
+# Load model and scaler
+regmodel = pickle.load(open('regmodel.pkl','rb'))
+scaler = pickle.load(open('scaling.pkl','rb'))
 
-# Load the model
-regmodel=pickle.load(open('regmodel.pkl','rb'))
-scaler=pickle.load(open('scaling.pkl','rb'))
+st.title("Diabetes Predictions")
 
+age = st.number_input("Age", min_value=1, max_value=100, value=30)
+sex = st.number_input("Sex (0/1)", min_value=0, max_value=1, value=0)
+bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=25.0, step=0.1)
+bp  = st.number_input("BP", min_value=50.0, max_value=150.0, value=80.0, step=0.5)
+s1  = st.number_input("S1", value=0.0)
+s2  = st.number_input("S2", value=0.0)
+s3  = st.number_input("S3", value=0.0)
+s4  = st.number_input("S4", value=0.0)
+s5  = st.number_input("S5", value=0.0)
+s6  = st.number_input("S6", value=0.0)
 
-@app.route('/')
-def home():
-  return render_template('home.html')
-
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-  data=request.json['data']
-  print(data)
-  print(np.array(list(data.values())).reshape(1,-1))
-
-  new_data=scaler.transform(np.array(list(data.values())).reshape(1,-1))
-
-  output=regmodel.predict(new_data)
-
-  print(output[0])
-  return jsonify({'prediction': output[0].item()})
-
-@app.route('/predict',methods=['POST'])
-def predict():
-  data=[float(x) for x in request.form.values()]
-  final_input=scaler.transform(np.array(data).reshape(1,-1))
-
-  print(final_input)
-  output=regmodel.predict(final_input)
-  return render_template("home.html",prediction_text="The Diabetes perdiction is {}".format(output))
-
-if __name__ == "__main__":
-  app.run(debug=True)
+if st.button("Predict"):
+    data = np.array([[age, sex, bmi, bp, s1, s2, s3, s4, s5, s6]])
+    new_data = scaler.transform(data)
+    output = regmodel.predict(new_data)
+    st.success(f"Predicted diabetes progression: {output[0].item():.2f}")
