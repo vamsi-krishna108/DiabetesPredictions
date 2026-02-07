@@ -56,14 +56,6 @@ streamlit run app.py
 
 ```
 
-🚀 Excited to share my first deployed Machine Learning project!
-
-I built a Diabetes Prediction System using:
-✅ Linear Regression
-✅ Python & Scikit-learn  
-✅ Streamlit for web interface
-✅ Deployed on Streamlit Cloud
-
 🔗 Live Demo: https://diabetespredictions-ngyczqg6pwzjbjnxwpepub.streamlit.app/
 
 #MachineLearning #DataScience #Python #AI #100DaysOfCode #BTech
