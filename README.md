@@ -50,8 +50,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 📸 Screenshots
-![App Screenshot](screenshot.png)
+
 
 ## 👨‍💻 Author
 [Jonnagiri Vamsi Krishna] - [LinkedIn : https://www.linkedin.com/in/vamsi-krishna-4210a1325/] - [Email : vamshikrishna4444j@gmail.com]
